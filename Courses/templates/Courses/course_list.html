@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course List</title>
+</head>
+<body>
+    <h1>Available Courses</h1>
+    <ul>
+        <!-- Loop through the courses passed from the view -->
+        {% for Course in offered_courses %}
+            <li>
+                <h6>{{ Course.title }}</h6> - {{ Course.duration }} days
+                <p>{{ Course.description }}</p>
+                {% if Course.video %}
+                    <video width="320" height="240" controls>
+                        <source src="{{ Course.video.url }}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                {% endif %}
+            </li>
+        {% empty %}
+            <p>No courses available at the moment.</p>
+        {% endfor %}
+    </ul>
+</body>
+</html>
