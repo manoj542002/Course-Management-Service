@@ -1,3 +1,11 @@
-ECHO is on.
-"media/" 
-"db.sqlite3" 
+# Ignore database file
+db.sqlite3
+
+# Ignore media files
+media/
+
+# Ignore __pycache__ directories
+__pycache__/
+
+# Ignore Python bytecode files
+*.pyc
